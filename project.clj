@@ -14,8 +14,8 @@
 
   :cljsbuild {:builds [{:id "dev"
                         :source-paths ["src/cljs"]
-                        :figwheel {:on-jsload "routing_example_reframe.core/mount-root"}
-                        :compiler {:main routing_example_reframe.core
+                        :figwheel {:on-jsload "slides.core/mount-root"}
+                        :compiler {:main slides.core
                                    :output-to "resources/public/js/compiled/app.js"
                                    :output-dir "resources/public/js/compiled/out"
                                    :asset-path "js/compiled/out"

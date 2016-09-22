@@ -29,3 +29,4 @@ figwheel_server.log
 .nrepl-port
 *.iml
 _checkouts
+resources/public/js/compiled

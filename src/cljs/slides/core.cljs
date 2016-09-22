@@ -1,6 +1,6 @@
- (ns core
-   (:require [reagent.core :as reagent]
-             [views.main :as main-view]))
+(ns slides.core
+  (:require [reagent.core :as reagent]
+            [slides.views.main :as main-view]))
 
 (defn mount-root []
   (reagent/render [main-view/page]
