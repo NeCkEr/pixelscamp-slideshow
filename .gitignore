@@ -30,3 +30,5 @@ figwheel_server.log
 *.iml
 _checkouts
 resources/public/js/compiled
+node_modules/
+npm-debug.log
