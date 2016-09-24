@@ -5,8 +5,8 @@
 
   :source-paths ["src"]
 
-  :plugins [[lein-cljsbuild "1.1.3"]
-            [lein-figwheel "0.5.0-6"]]
+  :plugins [[lein-cljsbuild "1.1.4"]
+            [lein-figwheel "0.5.7"]]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
