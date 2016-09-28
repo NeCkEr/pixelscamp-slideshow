@@ -1,0 +1,81 @@
+@font-face {
+  font-family: elektra_light_proregular;
+  src: url('elektralight-webfont.woff2') format('woff2'),
+                                   url('elektralight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: elektra_text_probold;
+  src: url('elektratextbold-webfont.woff2') format('woff2'),
+                                   url('elektratextbold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Roboto, sans-serif;
+  color: #303030;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cd-slideshow-wrapper {
+  overflow: hidden;
+}
+
+.cd-slideshow {
+  position: relative;
+}
+
+.cd-slideshow .sub-slides {
+  width: 100%;
+}
+
+.cd-slideshow .sub-slides {
+*zoom: 1;
+}
+
+.cd-slideshow .sub-slides:before, .cd-slideshow .sub-slides:after {
+  display: table;
+  content:      ;
+  line-height: 0;
+}
+
+.cd-slideshow .sub-slides:after {
+  clear: both;
+}
+
+.cd-slideshow li {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+}
+
+.cd-slideshow li {
+*zoom: 1;
+}
+
+.cd-slideshow li:before, .cd-slideshow li:after {
+  display: table;
+  content:      ;
+  line-height: 0;
+}
+
+.cd-slideshow li:after {
+  clear: both;
+}

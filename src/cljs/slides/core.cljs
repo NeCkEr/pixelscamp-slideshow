@@ -1,16 +1,18 @@
 (ns slides.core
   (:require [reagent.core :as r]
             [slides.views.main :as main-view]
-            [slides.events :as events]))
+            [slides.views.slider :as slider]
+            [slides.effects :as effects]
+            [slides.state :as state]))
 
 (enable-console-print!)
 
 (defn mount-root []
-  (r/render [main-view/page]
+  (r/render [slider/main {:!db state/!db}]
     (.getElementById js/document "app")))
 
 (defn ^:export init []
-  (events/listen-arrow-keys!)
+  (effects/listen-arrow-keys!)
   (mount-root))
 
 

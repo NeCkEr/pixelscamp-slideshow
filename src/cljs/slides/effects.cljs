@@ -1,11 +1,11 @@
-(ns slides.events
+(ns slides.effects
   (:require [goog.events :as gevents]
             [goog.events.EventType :as EventType]
             [goog.events.KeyCodes :as KeyCodes]
             [cljs.core.async :as a]))
 
 
-(defonce <slides-events (a/chan (a/sliding-buffer 1)))
+(def <slides-events (a/chan (a/sliding-buffer 1)))
 
 (defn listen-arrow-keys!
   []

@@ -1,5 +1,12 @@
 (ns slides.state
-  (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [slides.views.content :as content]))
 
-(def !db (r/atom {:current-slide      1
-                  :current-translateY 0}))
+(defonce !db (r/atom {:current-slide      1
+                  :current-translateY 0
+                  :timeline-visible?  false
+                  :slides             [{:content-view #'content/slide-1}
+                                       {:content-view #'content/slide-2}
+                                       {:content-view #'content/slide-3}
+                                       {:content-view #'content/slide-4
+                                        :year         1960}]}))
