@@ -3,11 +3,11 @@
             [goog.dom :as gdom]
             [goog.style :as gstyle]
             [clojure.string :as string]
-            [slides.events :as events]
+            [slides.effects :as effects]
             [cljs.core.async :as a])
   (:require-macros [cljs.core.async.macros :refer [go-loop]]))
 
-(defn page
+#_(defn page
   [{:keys [!db]}]
   (r/create-class
     {:component-did-mount
@@ -19,7 +19,7 @@
              slides-offset    (gstyle/getPageOffsetTop dom-node-slide2)
              margin-bottom    (gstyle/getComputedStyle dom-node-content "margin-bottom")]
          (go-loop []
-           (let [key-pressed (a/<! events/<slides-events)]
+           (let [key-pressed (a/<! effects/<slides-events)]
              (if (= key-pressed :next-slide)
                ;; next-slide
                (swap! !db (fn [db]

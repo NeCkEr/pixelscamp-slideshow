@@ -6,7 +6,7 @@
                               "visible")}
    [:div.cd-slider-content
     [:div.content-wrapper
-     [:h2 "A SIMPLEs but not EASY introdution to\n\nClojure and ClojureScript"]]]])
+     [:h2 "slide-1s"]]]])
 
 
 (defn slide-2
@@ -15,7 +15,7 @@
                               "visible")}
    [:div.cd-slider-content
     [:div.content-wrapper
-     [:h2 "A SIMPLE but not EASY introdution to\n\nClojure and ClojureScript"]]]])
+     [:h2 "slide-2"]]]])
 
 
 (defn slide-3
@@ -24,7 +24,7 @@
                               "visible")}
    [:div.cd-slider-content
     [:div.content-wrapper
-     [:h2 "A SIMPLE but not EASY introdution to\n\nClojure and ClojureScript"]]]])
+     [:h2 "slide-3"]]]])
 
 
 
@@ -34,4 +34,4 @@
                               "visible")}
    [:div.cd-slider-content
     [:div.content-wrapper
-     [:h2 "A SIMPLE but not EASY introdution to\n\nClojure and ClojureScript"]]]])
+     [:h2 "slide-4"]]]])

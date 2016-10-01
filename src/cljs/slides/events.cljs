@@ -1,23 +1,21 @@
 (ns slides.events
-  (:require [goog.events :as gevents]
-            [goog.events.EventType :as EventType]
-            [goog.events.KeyCodes :as KeyCodes]
-            [cljs.core.async :as a]))
+  (:require [taoensso.timbre :as log]))
 
+(defmulti process! (fn [_ [id & _]] id))
 
-(defonce <slides-events (a/chan (a/sliding-buffer 1)))
+(defn handle-event! [ctx [id & payload :as event]]
+  (when (and (not= :push id) (not= :navigate))
+    (log/debugf "[EVENT] %s - %s" id payload))
+  (try
+    (process! ctx event)
+    (catch :default e
+      (log/errorf e "Error processing event %s" id))))
 
-(defn listen-arrow-keys!
-  []
-  (gevents/listen js/document
-    EventType/KEYUP
-    (fn [e]
-      (when (or
-              (= (.-keyCode e) KeyCodes/DOWN)
-              (= (.-keyCode e) KeyCodes/RIGHT))
-        (a/put! <slides-events :next-slide))
-      (when (or
-              (= (.-keyCode e) KeyCodes/UP)
-              (= (.-keyCode e) KeyCodes/LEFT))
-        (a/put! <slides-events :previous-slide))
-      nil)))
+(defmethod process! :default
+  [_ [id & _]]
+  (log/warnf "Unknown event: %s" id))
+
+(defmethod process! :slider
+  [{:keys [!db] :as ctx} [_ direction]]
+  (println "direction: " direction)
+  )

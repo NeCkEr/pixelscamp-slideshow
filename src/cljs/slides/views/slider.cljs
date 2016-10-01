@@ -11,5 +11,5 @@
      :reagent-render
      (fn []
        [:ol.cd-slideshow {:style {:transform (str "translateY(" (:current-translateY @!db) "px)")}}]
-       [(-> @!db :slides first :content-view) !db]
+       [(-> @!db :slides (nth (:current-slide @!db)) :content-view) !db]
        )}))
