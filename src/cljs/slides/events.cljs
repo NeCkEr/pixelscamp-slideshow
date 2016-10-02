@@ -17,9 +17,9 @@
   (log/warnf "Unknown event: %s" id))
 
 (defmethod process! :slider
-  [{:keys [!db] :as ctx} [_ direction]]
-  (println (:current-slide @!db))
-  (println "direction " direction)
+  [{:keys [!db slides] :as ctx} [_ direction]]
   (if (= :next-slide direction)
-    (swap! !db api/next-slide!)
+    (do
+      (let [next-year (:year (nth slides (inc (:current-slide @!db))))]
+        (swap! !db (partial api/next-slide! next-year))))
     (reset! !db (api/previous-slide! @!db))))

@@ -19,10 +19,12 @@
                         (assoc :history (into [] previous-history)))))
     (last previous-history)))
 
-(defn next-slide! [db]
+(defn next-slide! [next-year db]
   (let [current-slide (:current-slide db)]
     (save-history!
-      (assoc db :current-slide (+ current-slide 1)))))
+      (-> db
+        (assoc :current-year next-year)
+        (assoc :current-slide (+ current-slide 1))))))
 
 (defn previous-slide!
   [db]

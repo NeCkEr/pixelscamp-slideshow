@@ -6,7 +6,6 @@
 
 (defn listen-arrow-keys!
   [<slides-events]
-  (println "listen-arrow-keys!")
   (gevents/listen js/document
     EventType/KEYUP
     (fn [e]

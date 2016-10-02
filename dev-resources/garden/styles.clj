@@ -1,6 +1,6 @@
 (ns styles
   (:require [garden.def :refer [defstyles defrule]]
-            [garden.units :refer [percent px rem vh vw]]
+            [garden.units :refer [percent px rem vh vw em]]
             [garden.color :as color :refer [hsl rgb rgba]]
             [garden.stylesheet :as s]
             [utils :as u]))
@@ -9,16 +9,16 @@
 
 (def elektra-light
   (s/at-font-face {:font-family "elektra_light_proregular"
-                   :src         "url('elektralight-webfont.woff2') format('woff2'),
-                                 url('elektralight-webfont.woff') format('woff')"
+                   :src         "url('/fonts/elektralight-webfont.woff2') format('woff2'),
+                                 url('/fonts/elektralight-webfont.woff') format('woff')"
                    :font-weight "normal"
                    :font-style  "normal"}))
 
 
 (def elektra-bold
   (s/at-font-face {:font-family "elektra_text_probold"
-                   :src         "url('elektratextbold-webfont.woff2') format('woff2'),
-                                 url('elektratextbold-webfont.woff') format('woff')"
+                   :src         "url('/fonts/elektratextbold-webfont.woff2') format('woff2'),
+                                 url('/fonts/elektratextbold-webfont.woff') format('woff')"
                    :font-weight "normal"
                    :font-style  "normal"}))
 
@@ -40,12 +40,14 @@
 
   [:body
    {:font             {:size   (rem 1.6)
-                       :family "Roboto, sans-serif"}
-    :color            $background-color
-    :background-color $content-color}]
+                       :family "elektra_light_proregular"}
+    :color            $content-color
+    :background-color $background-color}]
 
   [:a
    {:text-decoration "none"}]
+
+  [:li {:list-style-type "none"}]
 
 
   [:.cd-slideshow-wrapper
@@ -66,4 +68,28 @@
    (u/clearfix :li)]
 
 
-  [:.cd-slider-content])
+  [:.cd-slider-content
+   {:position "relative"
+    :height   (vh 100)
+    :width    (percent 100)
+    :float    "left"
+    :display  "table"}
+   [:.content-wrapper
+    {:display        "table-cell"
+     :vertical-align "middle"}]
+   [:h2 :h1
+    {:font-size "10rem"
+     :color     $content-color}]
+   [:h3
+    {:font-size   "10rem"
+     :color       $content-color
+     :font-family "elektra_text_probold"}]
+   [:h4
+    {:font-size   "8rem"
+     :color       $content-color}]
+   [:p
+    {:margin-top    (em 1)
+     :margin-right  0
+     :margin-bottom (em 2)
+     :margin-left   0
+     :opacity       0.6}]])

@@ -15,7 +15,6 @@
     []
     (let [[v chan] (a/alts! [<ui-events <slides-events] :priority true)]
       (when v
-        (println v)
         (try
           (condp = chan
             <ui-events (event-handler render-ctx v)

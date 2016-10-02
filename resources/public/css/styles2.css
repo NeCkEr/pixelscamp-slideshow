@@ -1,15 +1,15 @@
 @font-face {
   font-family: elektra_light_proregular;
-  src: url('elektralight-webfont.woff2') format('woff2'),
-                                   url('elektralight-webfont.woff') format('woff');
+  src: url('/fonts/elektralight-webfont.woff2') format('woff2'),
+                                   url('/fonts/elektralight-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: elektra_text_probold;
-  src: url('elektratextbold-webfont.woff2') format('woff2'),
-                                   url('elektratextbold-webfont.woff') format('woff');
+  src: url('/fonts/elektratextbold-webfont.woff2') format('woff2'),
+                                   url('/fonts/elektratextbold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,13 +24,17 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: Roboto, sans-serif;
-  color: #303030;
-  background-color: #ffffff;
+  font-family: elektra_light_proregular;
+  color: #ffffff;
+  background-color: #303030;
 }
 
 a {
   text-decoration: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 .cd-slideshow-wrapper {
@@ -51,7 +55,7 @@ a {
 
 .cd-slideshow .sub-slides:before, .cd-slideshow .sub-slides:after {
   display: table;
-  content:      ;
+  content: "";
   line-height: 0;
 }
 
@@ -72,10 +76,47 @@ a {
 
 .cd-slideshow li:before, .cd-slideshow li:after {
   display: table;
-  content:      ;
+  content: "";
   line-height: 0;
 }
 
 .cd-slideshow li:after {
   clear: both;
+}
+
+.cd-slider-content {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  float: left;
+  display: table;
+}
+
+.cd-slider-content .content-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cd-slider-content h2, .cd-slider-content h1 {
+  font-size: 10rem;
+  color: #ffffff;
+}
+
+.cd-slider-content h3 {
+  font-size: 10rem;
+  color: #ffffff;
+  font-family: elektra_text_probold;
+}
+
+.cd-slider-content h4 {
+  font-size: 8rem;
+  color: #ffffff;
+}
+
+.cd-slider-content p {
+  margin-top: 1em;
+  margin-right: 0;
+  margin-bottom: 2em;
+  margin-left: 0;
+  opacity: 0.6;
 }
