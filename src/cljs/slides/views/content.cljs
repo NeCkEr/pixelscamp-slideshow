@@ -15,7 +15,7 @@
                               "visible")}
    [:div.cd-slider-content
     [:div.content-wrapper
-     [:h2 "slide-2"]]]])
+     [:h2 "slide-2ssss"]]]])
 
 
 (defn slide-3

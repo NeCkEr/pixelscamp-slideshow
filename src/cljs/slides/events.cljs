@@ -1,5 +1,6 @@
 (ns slides.events
-  (:require [taoensso.timbre :as log]))
+  (:require [taoensso.timbre :as log]
+            [slides.api :as api]))
 
 (defmulti process! (fn [_ [id & _]] id))
 
@@ -17,5 +18,8 @@
 
 (defmethod process! :slider
   [{:keys [!db] :as ctx} [_ direction]]
-  (println "direction: " direction)
-  )
+  (println (:current-slide @!db))
+  (println "direction " direction)
+  (if (= :next-slide direction)
+    (swap! !db api/next-slide!)
+    (reset! !db (api/previous-slide! @!db))))

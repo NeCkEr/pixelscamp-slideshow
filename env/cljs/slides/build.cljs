@@ -1,6 +1,7 @@
 (ns ^:figwheel-no-load slides.build
   [:require [slides.core :as core]
             [slides.state :as state]
+            [slides.api :as api]
             [slides.events :as events]
             [taoensso.timbre :as log]
             [cljs.core.async :as a]])
@@ -14,6 +15,7 @@
 (defn slideshow->system!
   []
   (let [!db        state/!db
+        slides     state/slides
         handler-fn #'events/handle-event!
         wrap-emit  (fn [f]
                      (fn [event]
@@ -24,6 +26,7 @@
                          (finally
                            nil))))]
     {:!db            !db
+     :slides         slides
      :emit!          (wrap-emit #(a/put! <ui-events %))
      :emit!!         (wrap-emit handler-fn)
      :handler-fn     handler-fn
@@ -32,6 +35,8 @@
 
 
 (set! core/system (slideshow->system!))
+(set! api/!history (atom {:history-index 0
+                          :history       [@state/!db]}))
 (core/init)
 
 
