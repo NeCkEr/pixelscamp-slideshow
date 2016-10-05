@@ -3,7 +3,9 @@
                  [org.clojure/clojurescript "1.9.36"]
                  [com.taoensso/timbre "4.4.0"]
                  [reagent "0.6.0-rc"]
-                 [garden "1.3.2"]]
+                 [garden "1.3.2"]
+                 [com.cemerick/piggieback "0.2.1"]
+                 [figwheel-sidecar "0.5.4-7"]]
 
   :source-paths ["src"]
 
@@ -19,10 +21,11 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
-  :figwheel {:css-dirs ["resources/public/css"]}
+  :figwheel {:css-dirs ["resources/public/css"]
+             :nrepl-port   7888}
 
   :cljsbuild {:builds [{:id           "dev"
-                        :source-paths ["src/cljs" "env/cljs"]
+                        :source-paths ["src/cljs" "env/cljs" "script"]
                         :figwheel     {:on-jsload  "slides.build/reload"
                                        :on-cssload "slides.build/css-reload"}
                         :compiler     {:main                 slides.build

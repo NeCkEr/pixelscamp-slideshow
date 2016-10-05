@@ -25,7 +25,7 @@
 
 ;; Colors
 
-(def $background-color "#303030") ;; Mine Shaft
+(def $background-color "#000") ;; Mine Shaft
 (def $content-color "#ffffff") ;; White
 
 (defstyles all

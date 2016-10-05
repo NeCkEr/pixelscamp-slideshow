@@ -3,7 +3,8 @@
             [slides.views.slider :as slider]
             [slides.effects :as effects]
             [cljs.core.async :as a]
-            [taoensso.timbre :as log])
+            [taoensso.timbre :as log]
+            [slides.views.content :refer [controller!]])
   (:require-macros [cljs.core.async.macros :refer [go-loop]]))
 
 (defonce system nil)
@@ -11,6 +12,8 @@
 
 (defn start-event-loop!
   [<ui-events <slides-events event-handler render-ctx]
+  (set! controller! {:event-handler event-handler
+                     :render-ctx render-ctx})
   (go-loop
     []
     (let [[v chan] (a/alts! [<ui-events <slides-events] :priority true)]

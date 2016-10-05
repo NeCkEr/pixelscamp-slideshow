@@ -5,12 +5,26 @@
   [{:keys [!db] :as ctx} year]
   (fn
     []
-    (println (:current-year @!db))
     [:div.out-line {:style {:display        "table"
                             :vertical-align "middle"}}
      (cond
-       (or (= year 1940) (= year 2016) (= (:current-year @!db) year))
-       [:div.line {:style {:background-color "gray"
+       (= (:current-year @!db) year)
+       [:div.layout
+        [:svg {:width   "100px"
+               :viewBox (str "0 0 150 50")}
+         [:polygon {:fill   "#999999"
+                    :points "137.95 45.72 0.01 44.52 0.4 0 138.34 1.21 150.35 23.57 137.95 45.72"}]
+         [:line {:stroke-width      "2px"
+                 :stroke            "#000"
+                 :stroke-miterlimit 10
+                 :x1                0
+                 :x2                70
+                 :y1                22
+                 :y2                22.30}]
+         ]]
+
+       (or (= year 1940) (= year 2016))
+       [:div.line {:style {:background-color "#999999"
                            :width            "50px"
                            :height           "2px"
                            :margin-top       "10px"
@@ -18,7 +32,7 @@
                            :float            "left"}}]
 
        (and (> year 1940) (< year 2000))
-       [:div.line {:style {:background-color "gray"
+       [:div.line {:style {:background-color "#999999"
                            :width            "15px"
                            :height           "1px"
                            :margin-top       "2.5px"
@@ -26,7 +40,7 @@
                            :float            "left"}}]
 
        :else
-       [:div.line {:style {:background-color "gray"
+       [:div.line {:style {:background-color "#999999"
                            :width            "30px"
                            :height           "2px"
                            :margin-top       "10px"
@@ -35,9 +49,17 @@
         ])
 
      (cond
-       (or (= year 1940) (= year 2016) (= (:current-year @!db) year))
-       [:div.year {:style {:float       "left"
-                           :margin-left "10px"}} year])]))
+       (and (or (= year 1940) (= year 2016))
+         (not= (:current-year @!db) year))
+       [:div.year {:style {:color "#999999"
+                           :float       "left"
+                           :margin-left "10px"}} year]
+
+       (= (:current-year @!db) year)
+       [:div.year {:style {:color       "#000"
+                           :position    "relative"
+                           :margin-left "50px"
+                           :margin-top  "-30px"}} year])]))
 
 (defn main
   [{:keys [!db slides] :as ctx}]

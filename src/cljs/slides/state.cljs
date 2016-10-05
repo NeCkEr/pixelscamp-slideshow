@@ -24,4 +24,35 @@
               :year           2004}
              {:content-view   #'content/slide-7
               :show-timeline? true
-              :year           2006}])
+              :year           2006}
+             {:content-view   #'content/slide-8
+              :show-timeline? true
+              :year           2007}
+             {:content-view   #'content/slide-9
+              :show-timeline? true
+              :year           2008}
+             {:content-view   #'content/slide-10
+              :show-timeline? true
+              :year           2008}
+             {:content-view   #'content/slide-11
+              :show-timeline? true
+              :year           2008}
+             {:content-view   #'content/slide-12
+              :show-timeline? true
+              :year           2010}
+             {:content-view   #'content/slide-13
+              :show-timeline? true
+              :year           2013}
+             {:content-view   #'content/slide-14
+              :show-timeline? true
+              :year           2014}
+             {:content-view   #'content/slide-15
+              :show-timeline? true
+              :year           2015}
+             {:content-view   #'content/slide-16
+              :show-timeline? true
+              :year           2016}
+             {:content-view   #'content/slide-17
+              :show-timeline? false}
+             {:content-view   #'content/slide-18
+              :show-timeline? false}])
