@@ -77,5 +77,5 @@
                       (for [year time-line-years]
                         ^{:key year}
                         [time-line-year ctx year]))])
-            [:ol.cd-slideshow {:style {:transform (str "translateY(" (:current-translateY @!db) "px)")}}]
+
             [(-> slides (nth (:current-slide @!db)) :content-view) !db]]))})))

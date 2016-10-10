@@ -12,7 +12,8 @@
              {:content-view   #'content/slide-2
               :show-timeline? false}
              {:content-view   #'content/slide-3
-              :show-timeline? true}
+              :show-timeline? true
+              :year           1940}
              {:content-view   #'content/slide-4
               :show-timeline? true
               :year           1960}
@@ -26,6 +27,12 @@
               :show-timeline? true
               :year           2006}
              {:content-view   #'content/slide-8
+              :show-timeline? true
+              :year           2007}
+             {:content-view   #'content/slide-8-half
+              :show-timeline? true
+              :year           2007}
+             {:content-view   #'content/slide-8-allmost-nine
               :show-timeline? true
               :year           2007}
              {:content-view   #'content/slide-9
@@ -45,7 +52,10 @@
               :year           2013}
              {:content-view   #'content/slide-14
               :show-timeline? true
-              :year           2014}
+              :year           2013}
+             {:content-view   #'content/slide-14-and-half
+              :show-timeline? true
+              :year           2013}
              {:content-view   #'content/slide-15
               :show-timeline? true
               :year           2015}
@@ -55,4 +65,26 @@
              {:content-view   #'content/slide-17
               :show-timeline? false}
              {:content-view   #'content/slide-18
+              :show-timeline? false}
+             {:content-view   #'content/slide-19
+              :show-timeline? false}
+             {:content-view   #'content/slide-20
+              :show-timeline? false}
+             {:content-view   #'content/slide-21
+              :show-timeline? false}
+             {:content-view   #'content/slide-22
+              :show-timeline? false}
+             {:content-view   #'content/slide-23
+              :show-timeline? false}
+             {:content-view   #'content/slide-24
+              :show-timeline? false}
+             {:content-view   #'content/slide-25
+              :show-timeline? false}
+             {:content-view   #'content/slide-26
+              :show-timeline? false}
+             {:content-view   #'content/slide-27
+              :show-timeline? false}
+             {:content-view   #'content/slide-28
+              :show-timeline? false}
+             {:content-view   #'content/slide-29
               :show-timeline? false}])
