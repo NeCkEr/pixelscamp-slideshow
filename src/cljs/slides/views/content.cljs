@@ -72,7 +72,7 @@
     [:div.content-wrapper
      [:h1 "_"]
      [:h2 "But first..."]
-     [:h3 "A litle bit of history :)"]]]])
+     [:h3 "A little bit of history :)"]]]])
 
 
 
